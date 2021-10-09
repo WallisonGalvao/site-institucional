@@ -11,7 +11,7 @@
     background-color: #111;
     border-style: solid;
     border-width: 5px;
-    border-color: aquamarine;
+    border-color: #7fffd4;
     /* border-radius: 10rem; */
     /* margin: 100px; */
 }
@@ -28,7 +28,7 @@
 
 .header .container{
     display: flex;
-    /* flex-direction: row; */
+   
     justify-content: space-between;
     align-items: center;
     border-radius: 20rem;
@@ -47,17 +47,17 @@
 
 .navbar li a {
     text-decoration: none;
-    color: goldenrod;
+    color: #daa520;
 }
 
 .header h1{
-    color: aquamarine;
+    color: #7fffd4;
    
 }
 
 .header ul
 {
-    color: goldenrod;
+    color: #daa520;
 }
 
 .active
@@ -68,7 +68,7 @@
 
 .banner
 {
-    height: 500px;
+    height: 700px;
     background-image: url(https://cdn.pixabay.com/photo/2020/03/12/01/49/jellyfish-4923656_960_720.jpg);
     background-size: cover;
     display: flex;
@@ -138,7 +138,7 @@
 
 .purpose .container h2
 {
-    background-color: #fffff;
+    background-color: #ffff;
     color: #E6005A;
     font-weight: bold;
     padding: 25px;
@@ -178,6 +178,11 @@
     justify-content: space-evenly;
 }
 
+.banner .formLogin p a{
+    text-decoration: none;
+    color: #E6005A;
+}
+
 .banner .formLogin h2{
     color: #E6005A;
 }
@@ -191,6 +196,7 @@
 .banner .formLogin span 
 {
     color: #E6005A;
+    font-weight: bolder;
 }
 
 .banner .formLogin div input
@@ -201,7 +207,62 @@
     padding: 10px;
 }
 
+.banner .formCadastro h2
+{
+    color: #E6005A;
+}
+
+.banner .formCadastro div select
+{
+    border: 2px solid #E6005A;
+    border-radius: 10px;
+    height: 25px;
+   
+}
+
 .banner .formLogin button
+{
+    background-color: #E6005A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+}
+
+.banner .formCadastro
+{
+    background-color: #E5E5E5;
+    height: 400px;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.banner .formCadastro div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner .formCadastro span 
+{
+    color: #E6005A;
+    font-weight: bolder;
+}
+
+.banner .formCadastro div input
+{
+    border: 2px solid #E6005A;
+    border-radius: 10px;
+    height: 15px;
+    padding: 10px;
+}
+
+.banner .formCadastro button
 {
     background-color: #E6005A;
     color: #fff;
