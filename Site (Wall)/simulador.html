@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Institucional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="header">
+                <div class="container">
+
+                    <a href="index.html">
+
+                        <img src="logoxicara.png" alt="logo">
+                    </a>
+
+                    <ul class="navbar">
+                        <li> <a href="index.html">Página Inicial</a></li>
+                        <li class="active"> Simulador</a>
+                        </li>
+                        <li>|</li>
+                        <li> <a href="login.html">Login</a> </li>
+                        <li> <a href="cadastro.html">Cadastro</a> </li>
+                        <li> <a href="contato.html">Contato</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="banner">
+            <div class="calc">
+                <!--Título no topo -->
+                <h1>Simule aqui</h1>
+
+                <div>
+                    <!-- Entrada de informação para tamanho do terreno -->
+                    <h3>Tamanho da área de cultivo em hectare:</h3>
+                    <input id="tam_terreno" type="text" placeholder="Ex: 100">
+                </div>
+
+                <div>
+                    <!-- Entrada de informação para quantidade de sacas por hectare-->
+                    <h3>Quantidade de sacas por hectare:</h3>
+                    <input id="qtd_por_hectar" type="text" placeholder="Ex: 25">
+                </div>
+
+                <div>
+                    <!-- Entrada de informação para valor unitario por saca-->
+                    <h3>Valor unitário da saca:</h3>
+                    <input id="valor_por_saca" type="text" placeholder="R$0.00">
+                </div>
+
+                <!-- Botão para simular os valores-->
+                <button onclick="simulador_valores()">Simular valores</button>
+
+                <button onclick="limpar_calculadora()">Limpar calculadora</button>
+
+
+                <!-- identificação do html através de uma div-->
+                <div id="div_estimativas"></div>
+
+            </div>
+    </main>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <p>
+            Coffee Analytics © 2021
+        </p>
+    </footer>
+</body>
+
+
+</html>
+
+<script>
+
+
+    function simulador_valores() {
+        // variável para definir a quantidade de sacas de acordo com tamanho do terreno e a quantidade de sacas por hectare 
+        var qtd_sacas = tam_terreno.value * qtd_por_hectar.value;
+
+        // variável que define o valor total de ganhos a partir do valor individual das sacas multiplicado pela quantidade de sacas produzida pelo cafeeiro
+        var valor_total = valor_por_saca.value * qtd_sacas;
+
+        // variável que acrescenta 20% ao valor total
+        var valor_total_20 = valor_total * 0.2;
+
+        // variável que subtrai 20% do valor total
+        var valor_total_menos20 = valor_total - (valor_total_20);
+
+        // variável que agrega 40% a diferença de 20% do valor total 
+        var valor_total_mais30 = (valor_total_20 * 0.4) + valor_total_menos20;
+
+        // variável que demonstra a diferença de lucro através dos 40% 
+        var lucro_solucao = valor_total_mais30 - valor_total_menos20;
+
+
+        // mensagem com as entradas das variáveis apresentando as informações para o cliente 
+        div_estimativas.innerHTML = `<h3><p>O lucro total sem perda de <span style="color: #210800;">20%</span> é de: <b> <span style="color: #F73A00;">R$${valor_total.toFixed(2)}</span><br><br></b>
+            O lucro com a perda estimada de <span style="color: rgb(241, 46, 46);">20%</span> é de: <b><span style="color: coral;">R$${valor_total_menos20.toFixed(2)}</span><br><br></b>
+            Com a nossa solução você reduzirá <span style="color: rgb(49, 179, 32);">40%</span> das suas perdas, o valor total com a redução será de: <b><span style="color: rgb(49, 179, 32);">R$${valor_total_mais30.toFixed(2)}</span></b></p></h3><br>
+            <h1>Utilizando a nossa solução você teve um ganho de <span style="color: rgb(49, 179, 32);">R$${lucro_solucao.toFixed(2)}</span></h1>
+            `;
+    }
+    // Limpar os dados da tela
+    function limpar_calculadora() {
+        div_estimativas.innerHTML = '';
+        // Limpar os inputs
+        tam_terreno.value = '';
+        qtd_por_hectar.value = '';
+        valor_por_saca.value = '';
+    }
+</script>
